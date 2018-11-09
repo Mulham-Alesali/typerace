@@ -1,0 +1,293 @@
+constructor();
+
+function constructor() {
+
+    words = ["he", "and", "to", "of", "a", "I", "in", "was", "he", "that", "it", "his", "her"
+        , "you", "as", "had", "with", "for", "she", "not", "at", "but", "be", "my", "on"
+        , "have", "him", "is", "said", "me", "which", "by", "so", "this", "all", "from"
+        , "they", "no", "were", "if", "would", "or", "when", "what", "there", "been", "one"
+        , "could", "very", "an", "who", "them", "Mr", "we", "now", "more", "out", "do", "are"
+        , "up", "their", "your", "will", "little", "than", "then", "some", "into", "any", "well"
+        , "much", "about", "time", "know", "should", "man", "did", "like", "upon", "such"
+        , "never", "only", "good", "how", "before", "other", "see", "must", "am", "own", "come"
+        , "down", "say", "after", "think", "made", "might", "being", "Mrs", "again", "great"
+        , "two", "can", "go", "over", "too", "here", "came", "old", "thought", "himself"
+        , "where", "our", "may", "first", "way", "has", "though", "without", "went", "us"
+        , "away", "day", "make", "these", "young", "nothing", "long", "shall", "sir", "back"
+        , "don't", "house", "ever", "yet", "take", "every", "hand", "most", "last", "eyes"
+        , "its", "miss", "having", "off", "looked", "even", "while", "dear", "look", "many"
+        , "life", "still", "mind", "quite", "another", "those", "just", "head", "tell", "better"
+        , "always", "saw", "seemed", "put", "face", "let", "took", "poor", "place", "why"
+        , "done", "herself", "found", "through", "same", "going", "under", "enough", "soon"
+        , "home", "give", "indeed", "left", "get", "once", "mother", "heard", "myself", "rather"
+        , "love", "knew", "got", "lady", "room", "something", "yes", "thing", "father"
+        , "perhaps", "sure", "heart", "oh", "right", "against", "three", "men", "night"
+        , "people", "door", "told", "round", "because", "woman", "till", "felt", "between"
+        , "both", "side", "seen", "morning", "began", "whom", "however", "asked", "things"
+        , "part", "almost", "moment", "looking", "want", "far", "hands", "gone", "world"
+        , "few", "towards", "gave", "friend", "name", "best", "word", "turned", "kind"
+        , "cried", "since", "anything", "next", "find", "half", "hope", "called", "nor"
+        , "words", "hear", "brought", "set", "each", "replied", "wish", "voice", "whole"
+        , "together", "manner", "new", "believe", "course", "least", "years", "answered"
+        , "among", "stood", "sat", "speak", "leave", "work", "keep", "taken", "end", "less"
+        , "present", "family", "often", "wife", "whether", "master", "coming", "mean"
+        , "returned", "evening", "light", "money", "cannot", "whose", "boy", "days", "near"
+        , "matter", "suppose", "gentleman", "used", "says", "really", "rest", "business"
+        , "full", "help", "child", "sort", "passed", "lay", "small", "behind", "girl", "feel"
+        , "fire", "care", "alone", "open", "person", "call", "given", "I'll", "sometimes"
+        , "making", "short", "else", "large", "within", "chapter", "true", "country", "times"
+        , "ask", "answer", "air", "kept", "hour", "letter", "happy", "reason", "pretty"
+        , "husband", "certain", "others", "ought", "does", "known", "it's", "bed", "table"
+        , "that's", "ready", "read", "already", "pleasure", "either", "means", "spoke", "taking"
+        , "friends", "talk", "hard", "walked", "turn", "strong", "thus", "yourself", "high"
+        , "along", "above", "feeling", "glad", "children", "doubt", "nature", "themselves"
+        , "black", "hardly", "town", "sense", "saying", "deal", "account", "use", "white"
+        , "bad", "everything", "can't", "neither", "wanted", "mine", "close", "return", "dark"
+        , "fell", "subject", "bear", "appeared", "fear", "state", "thinking", "also", "point"
+        , "therefore", "fine", "case", "doing", "held", "certainly", "walk", "lost", "question"
+        , "company", "continued", "fellow", "truth", "water", "possible", "hold", "afraid"
+        , "bring", "honour", "low", "ground", "added", "five", "remember", "except", "power"
+        , "seeing", "dead", "I'm", "usual", "able", "second", "arms", "late", "opinion"
+        , "window", "brother", "live", "four", "none", "death", "arm", "road", "hair", "sister"
+        , "entered", "sent", "married", "longer", "immediately", "god", "women", "hours", "ten"
+        , "understand", "son", "horse", "wonder", "cold", "beyond", "please", "fair", "became"
+        , "sight", "met", "afterwards", "eye", "year", "show", "general", "itself", "silence"
+        , "lord", "wrong", "turning", "daughter", "stay", "forward", "O", "interest", "thoughts"
+        , "followed", "won't", "different", "opened", "several", "idea", "received", "change"
+        , "laid", "strange", "nobody", "fact", "during", "feet", "tears"];
+
+    htmlWordBox = document.getElementById("wordsBox");
+
+    htmlWordInput = document.getElementById("wordInput");
+    //htmlWordInput.focus();
+
+    htmlWordInput.onkeyup = textChange;
+
+
+    htmlTimeLeft = document.getElementById("timeLeft");
+    htmlSpeed = document.getElementById("speed");
+
+
+    htmlWordPerMinute = document.getElementById("wordPerMinute");
+    htmlKeyStrokes = document.getElementById("keyStrokes");
+    htmlCorrectWords = document.getElementById("correctWords");
+    htmlWrongWords = document.getElementById("wrongWords");
+    htmlPecentage = document.getElementById("pecentage");
+
+
+    htmlRefreshImage = document.getElementById("refreshButton");
+    htmlRefreshImage.onclick = refreshButton;
+
+
+    htmlTimeCode = document.getElementById("timeLeft");
+    htmlSpeedCode = document.getElementById("speed");
+    //////////////////////////////////////////////////////////////////////
+
+    refreshWords();
+
+
+    htmlTestAgain = document.getElementById("testAgain");
+    htmlTestAgain.onclick = testAgain;
+
+
+    
+
+    //alert(htmlWord[3].innerText);
+
+    
+    // alert(htmlWordInput.value);
+    // alert("helloworld".indexOf("hello", 0));
+    // alert(htmlWords[4].innerHTML);
+    
+}
+
+var testing = false;//boolean value indicate if test is running or not
+
+var currentWord = 0; //reference the index of the current word
+var time = 60;
+
+
+var wordsTyped = 0;
+
+var keyStroke = 0;
+
+var keyStrokeWrongs = 0;
+
+function testAgain() {
+   // document.getElementById("firstArticle").style.display = "inline-block";
+   // document.getElementById("afterTest").style.display = "none";
+   //// alert("test again work");
+    newTest();
+}
+
+function refreshButton() {
+
+    newTest();
+    //endTest();
+
+    //document.getElementById("firstArticle").style.display = "inline-block";
+    //document.getElementById("afterTest").style.display = none;
+    //htmlWordBox.style.display = " inline-block";
+    //htmlWordInput.style.display = "inline";
+}
+
+function newTest() {
+
+    endTest();
+
+    document.getElementById("firstArticle").style.display = "inline-block";
+    document.getElementById("afterTest").style.display = "none";
+}
+
+function refresh() {    
+    try {
+
+        clearInterval(timer);
+
+    } catch (e) {
+
+    }
+
+    time = 60;
+    htmlTimeCode.innerHTML = time;
+    testing = false;
+    HTMLInputElement.value = "";
+    refreshWords();
+}
+
+function textChange() {
+
+    if (!testing) {
+        testing = true;
+        startTest();
+    }
+
+    checkWord();
+
+
+    keyStroke++;
+    //this code is for playing tick sound wen press a button
+
+
+    // var audio = new Audio('TYPE.WAV');
+  //  audio.play();
+
+}
+
+function checkWord() {
+
+    var input = htmlWordInput.value.trim();
+    var htmlCurrentWord = htmlWords[currentWord];
+
+
+    //htmlCurrentWord.InnerHTML.indexOf(input.trim(), 0) == 0)
+    if (input == htmlCurrentWord.innerHTML) {
+
+        htmlCurrentWord.style.backgroundColor = "#374665";
+
+        htmlWordInput.value = "";
+        nextWord();
+    }
+    else if (htmlCurrentWord.innerHTML.indexOf(input, 0) == 0) {
+
+        htmlCurrentWord.style.backgroundColor = "#008A2E";
+
+    } else {
+        htmlCurrentWord.style.backgroundColor = "red";
+        keyStrokeWrongs++;
+      //  alert(keyStrokeWrongs);
+    }
+
+}
+
+function nextWord() {
+
+    currentWord++;
+    currentWord++;
+
+    wordsTyped++;
+
+    if (currentWord > 19) {
+        refreshWords();
+    }
+    //  alert(currentWord);
+
+    
+    textToSpeech(htmlWords[currentWord].innerHTML);
+
+}
+
+function textToSpeech(text) {
+    
+    var msg = new SpeechSynthesisUtterance(text);
+    
+    window.speechSynthesis.speak(msg);
+    
+//    alert(text);
+}
+
+function startTest() {
+
+    currentWord = 0;
+    wordsTyped = 0;
+    keyStroke = 0;
+    keyStrokeWrongs = 0;
+    timer = setInterval(secondTick, 1000);
+
+}
+
+function secondTick() {
+    if (time > 0) {
+        time--;
+        htmlTimeCode.innerHTML = time;
+        htmlSpeedCode.innerHTML = Math.floor((wordsTyped / (60 - time ))*60);
+
+    } else endTest();
+
+}
+
+function endTest() {
+    document.getElementById("firstArticle").style.display = "none";
+    //htmlWordBox.style.display = "none";
+    //htmlWordInput.style.display = "none";
+
+    var htmlWpm = document.getElementById("wordPerMinute");
+    var htmlKs = document.getElementById("keyStrokes");
+    var htmlwrStk = document.getElementById("wrongStrokes");
+
+    htmlWpm.innerHTML = Math.floor((wordsTyped / (60 - time)) * 60);
+    htmlKs.innerHTML = keyStroke;
+    htmlwrStk.innerHTML = keyStrokeWrongs;
+    
+    htmlWordInput.value = "";
+
+    refresh();
+   
+    document.getElementById("afterTest").style.display = "inline-block";
+}
+
+function refreshWords() {
+
+    htmlWordBox.innerHTML = "";
+    var text = "";
+
+    for (var i = 0 ; i < 10; i++) {
+        text += "<code>" + getRandomWord() + "</code>" + "&nbsp;"
+    }
+
+    htmlWordBox.innerHTML = text;
+    currentWord = 0;
+    htmlWords = htmlWordBox.childNodes;
+}
+
+function getRandomWord() {
+
+    return words[randomNumber()];
+}
+
+function randomNumber() {
+    // var v = Math.floor(Math.random() * (500 - (1 + 1)) + (1 + 1));
+    //  Math.floor(Math.random() * (max - (min + 1)) + (min + 1));
+    var v = Math.floor(Math.random() * 500);
+    return v;
+}

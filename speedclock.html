@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+
+
+    <style>
+          #canvas {
+        border-radius:175px;
+
+            }
+         </style>    
+    <img id="speedClockImage" src="speed.jpg" alt="speed clock" style="display:none;">
+    <canvas id="canvas" width="200" height="200" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+        window.onload = function () {
+            var c = document.getElementById("canvas");
+             ctx = c.getContext("2d");
+            var img = document.getElementById("speedClockImage");
+            ctx.drawImage(img, 0, -7, c.width, c.height + 30);
+            radius = canvas.height / 2;
+            ctx.translate(radius, radius);
+            radius = radius * 0.90
+            
+            draw(1);
+        }
+
+
+        function draw(cSpeed) {
+            
+            if (!(cSpeed < 80)) cSpeed = 80;
+            drawClock(cSpeed);
+           drawSpeedNumber(cSpeed);
+            
+           
+        }
+
+
+        function drawClock(cSpeed) {
+
+            drawTime(ctx, radius,cSpeed);
+            
+        }
+
+        function drawTime(ctx, radius,cSpeed) {
+
+
+            cSpeed = cSpeed * (45 / 80);
+            cSpeed -= 22;
+            
+            cSpeed = (cSpeed * Math.PI / 30);
+            drawHand(ctx, cSpeed, radius * 0.9, radius * 0.03);
+        }
+
+        function drawHand(ctx, pos, length, width) {
+            
+            ctx.beginPath();
+            ctx.strokeStyle = "white";
+            ctx.lineWidth = width;
+            ctx.lineCap = "round";
+            ctx.moveTo(0, 0);
+            ctx.rotate(pos);
+            ctx.lineTo(0, -length);
+            ctx.stroke();
+            ctx.rotate(-pos);
+
+            ctx.beginPath();
+            
+
+            ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+            ctx.fillStyle = 'white';
+            ctx.fill();
+        }
+
+        function drawSpeedNumber(num) {
+            
+            ctx.font = radius * 0.18 + "px arial";
+            
+            ctx.textBaseline = "middle";
+            ctx.textAlign = "center";
+            ctx.fillStyle = "red";
+            ctx.translate(0, 0);
+            ctx.fillText(num.toString() + " wpm", 0, 60);
+            
+        }
+         
+
+    </script>
+
+</body>
+</html>
+
+
